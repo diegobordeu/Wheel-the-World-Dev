@@ -5,7 +5,7 @@ npm install
 npm run test
 ```
 
-# Wheel-the-World-Dev-Q1
+## Wheel-the-World-Dev-Q1
 
 A tandem bicycle is a bicycle that's operated by two people: person A and person B. Both people pedal the bicycle, but the person that pedals faster dictates the speed of the bicycle. So if person A pedals at a speed of 5, and person B pedals at a speed of 4, the tandem bicycle moves at a speed of 5  (i.e.,tandemSpeed = max(speedA, speedB)).
   
@@ -26,4 +26,23 @@ Sample Output:
 32
 
 ```
+
+## Wheel-the-World-Dev-Q2
+
+Given an array of positive integers representing coin denominations and a single non-negative integer n  representing a target amount of money, write a function that returns the smallest number of coins needed to make change for (to sum up to) that target amount using the given coin denominations.
+
+Note that you have access to an unlimited amount of coins. In other words, if the denominations are [1, 5, 10] , you have access to an unlimited amount of 1s 5s and 10s
+
+If it's impossible to make change for the target amount, return -1.
+  
+Sample Input:
+n = 7
+denoms = [1, 5, 10]
+
+Sample Output:
+5, 1, 1
+1, 1
+1, 5, 1
+
+3
 

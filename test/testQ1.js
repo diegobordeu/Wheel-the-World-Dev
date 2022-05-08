@@ -4,7 +4,7 @@ const {
   sortAsc,
   sortDesc,
   getTotalSpeed,
-} = require('../app');
+} = require('../q1');
 
 describe('Testing For question Q1', () =>  {
   
