@@ -39,6 +39,7 @@
  */
 
 const minimunNumberCoins = (denoms, n) => {
+  checkInput(denoms, n);
   const minNumberOfCoins = new Array(n + 1).fill(Infinity);
   minNumberOfCoins[0] = 0 // min ways of doing 0 = 1; dont use any coin (Base case in our Dinimic Programing approach)
   for (const coin of denoms) {
@@ -53,8 +54,25 @@ const minimunNumberCoins = (denoms, n) => {
         previousCombo,
       )
     }
-    console.log(minNumberOfCoins);
   }
+  const res = minNumberOfCoins[minNumberOfCoins.length - 1]
+  return res !== Infinity ? res : -1
 }
 
-minimunNumberCoins([1,5,10], 7);
+const checkInput = (coins, n) => {
+  if (n < 0) throw new TypeError('n can not be negative');
+  if (Math.min(...coins) <= 0) throw new TypeError('all coins should be non zero positives');
+}
+
+module.exports = {
+  minimunNumberCoins,
+}
+
+/*
+More test cases:
+coins 1,3,4,6          n = 10  ans = 2 (2+6)
+coins 3,5,10           n = 10  ans = 1 (10)
+coins 1,2,3,4,5,15,    n = 37  ans = 4 (15+15+3+4)
+coins 1,2,7,4,5,15,    n = 37  ans = 3 (15+15+7)
+coins 1,6,9,10,5,15,   n = 37  ans = 4 (15+15+1+6)
+*/
