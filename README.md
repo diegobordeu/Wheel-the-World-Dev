@@ -5,7 +5,7 @@ npm install
 npm run test
 ```
 
-## Wheel-the-World-Dev-Q1
+## Q1
 
 A tandem bicycle is a bicycle that's operated by two people: person A and person B. Both people pedal the bicycle, but the person that pedals faster dictates the speed of the bicycle. So if person A pedals at a speed of 5, and person B pedals at a speed of 4, the tandem bicycle moves at a speed of 5  (i.e.,tandemSpeed = max(speedA, speedB)).
   
@@ -27,7 +27,7 @@ Sample Output:
 
 ```
 
-## Wheel-the-World-Dev-Q2
+## Q2
 
 Given an array of positive integers representing coin denominations and a single non-negative integer n  representing a target amount of money, write a function that returns the smallest number of coins needed to make change for (to sum up to) that target amount using the given coin denominations.
 
@@ -41,4 +41,22 @@ denoms = [1, 5, 10]
 
 Sample Output:
 3
+
+## Q3
+
+Write a function that takes in an n x m two-dimensional array (that can be square-shaped when n == m) and returns a one-dimensional array of all the array's elements in zigzag order.
+
+Zigzag order starts at the top left corner of the two-dimensional array, goes down by one element, and proceeds in a zigzag pattern all the way to the bottom right corner.
+
+Sample Input:
+array = [
+    [1, 3, 4, 10],
+    [2, 5, 9, 11],
+    [6, 8, 12, 15],
+    [7, 13, 14, 16],
+]
+
+Sample Output:
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
 
