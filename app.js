@@ -20,11 +20,13 @@ const sortDesc = (a, b) => {
 }
 
 const getTotalSpeed = (redShirtSpeeds, blueShirtSpeeds, fastest) => {
+  if (redShirtSpeeds.length !== blueShirtSpeeds.length) throw new TypeError('array must have same size');
   redShirtSpeeds = redShirtSpeeds.sort(sortAsc);
   blueShirtSpeeds = blueShirtSpeeds.sort(sortAsc);
   if (fastest) blueShirtSpeeds = blueShirtSpeeds.sort(sortDesc);
   let totalSum = 0;
   for (const idx in redShirtSpeeds) {
+    if (redShirtSpeeds[idx] < 0 || blueShirtSpeeds[idx] < 0) throw new TypeError('speeds must be positive');
     totalSum += Math.max(redShirtSpeeds[idx], blueShirtSpeeds[idx])
   }
   return totalSum;

@@ -64,6 +64,16 @@ describe('Testing For question Q1', () =>  {
       const outcome = getTotalSpeed([], [], true);
       assert.equal(outcome, 0, 'broken validation')
     });
+
+    it('(integration): edge case Exception: array with different sizes', () => {
+      assert.throws(() => getTotalSpeed([1,2], [3], true), TypeError);
+      assert.throws(() => getTotalSpeed([3], [1,2], true), TypeError);
+    });
+
+    it('(integration): edge case Exception: negative numbers', () => {
+      assert.throws(() => getTotalSpeed([1,-2], [3,4], true), TypeError);
+      assert.throws(() => getTotalSpeed([3,4], [-1,2], true), TypeError);
+    });
   
   });
 });
