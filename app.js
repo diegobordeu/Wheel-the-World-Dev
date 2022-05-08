@@ -32,15 +32,6 @@ const getTotalSpeed = (redShirtSpeeds, blueShirtSpeeds, fastest) => {
   return totalSum;
 }
 
-
-const red = [5, 5, 3, 9, 2];
-const blue = [3, 6, 7, 2, 1];
-
-const fast = getTotalSpeed(red, blue, true);
-const slow = getTotalSpeed(red, blue, false);
-
-console.log({fast, slow})
-
 module.exports = {
   sortAsc,
   sortDesc,

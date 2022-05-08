@@ -10,7 +10,7 @@ describe('Testing For question Q1', () =>  {
   
   /**
    * sortAsc, sortDesc is not needed to test as it is a javascript native sorting approche
-   * i just did it to set up the testing env
+   * I just did it to set up the testing env
    */
   describe('sortAsc()', () => {
     it('(unit): happy path, expected outcome', () => {

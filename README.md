@@ -1,3 +1,10 @@
+## Runnign Test
+In order to run the test do the following
+```bash
+npm install
+npm run test
+```
+
 # Wheel-the-World-Dev-Q1
 
 A tandem bicycle is a bicycle that's operated by two people: person A and person B. Both people pedal the bicycle, but the person that pedals faster dictates the speed of the bicycle. So if person A pedals at a speed of 5, and person B pedals at a speed of 4, the tandem bicycle moves at a speed of 5  (i.e.,tandemSpeed = max(speedA, speedB)).
