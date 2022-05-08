@@ -37,3 +37,9 @@ const fast = getTotalSpeed(red, blue, true);
 const slow = getTotalSpeed(red, blue, false);
 
 console.log({fast, slow})
+
+module.exports = {
+  sortAsc,
+  sortDesc,
+  getTotalSpeed,
+}
