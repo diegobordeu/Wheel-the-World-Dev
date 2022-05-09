@@ -43,6 +43,14 @@ const canMove = (matrix, state, delta) => {
   return true;
 }
 
+
+/**
+ * Time Complexity: O(n x m)
+ * Space Complexity O(n x m)
+ * where n are the rows and m the columns of the matrix
+ * @param {Object[Object[number]]} matrix 
+ * @returns {Object[number]}
+ */
 const doTheZigZagThing = (matrix) => {
   if (!Array.isArray(matrix) || matrix.length === 0) throw new TypeError('matrix has to be 2D and non empty');
   if (!Array.isArray(matrix[0]) || matrix[0].length === 0) throw new TypeError('matrix has to be 2D and non empty')

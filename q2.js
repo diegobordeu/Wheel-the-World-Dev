@@ -38,6 +38,16 @@
  * n = 7 => 5 + 1 + 1   3 time is the answer
  */
 
+
+
+/**
+ * Time complexity O(n x m)
+ * Space Complexity O(n x m)
+ * where n is n and m is the length of the denoms array
+ * @param {Object[number]} denoms 
+ * @param {number} n 
+ * @returns {number}
+ */
 const minimunNumberCoins = (denoms, n) => {
   checkInput(denoms, n);
   const minNumberOfCoins = new Array(n + 1).fill(Infinity);

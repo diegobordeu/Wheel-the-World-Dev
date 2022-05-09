@@ -19,6 +19,15 @@ const sortDesc = (a, b) => {
   return b - a
 }
 
+/**
+ * Time Complexity: O(n)
+ * Space Complexity O(n)
+ * where n is length of the arrays
+ * @param {Object[number]} redShirtSpeeds 
+ * @param {Object[number]} blueShirtSpeeds 
+ * @param {boolean} fastest 
+ * @returns {number}
+ */
 const getTotalSpeed = (redShirtSpeeds, blueShirtSpeeds, fastest) => {
   if (redShirtSpeeds.length !== blueShirtSpeeds.length) throw new TypeError('array must have same size');
   redShirtSpeeds = redShirtSpeeds.sort(sortAsc);
