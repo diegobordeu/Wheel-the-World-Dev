@@ -42,7 +42,7 @@
 
 /**
  * Time complexity O(n x m)
- * Space Complexity O(n x m)
+ * Space Complexity O(n)
  * where n is n and m is the length of the denoms array
  * @param {Object[number]} denoms 
  * @param {number} n 

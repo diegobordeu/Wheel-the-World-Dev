@@ -20,7 +20,7 @@ const sortDesc = (a, b) => {
 }
 
 /**
- * Time Complexity: O(n)
+ * Time Complexity: O(n * log(n))
  * Space Complexity O(n)
  * where n is length of the arrays
  * @param {Object[number]} redShirtSpeeds 
