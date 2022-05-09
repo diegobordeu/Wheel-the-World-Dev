@@ -9,7 +9,7 @@ const {
 describe('Testing For question Q3', () =>  {
 
   describe('moveTo()', () => {
-    it('(unit): happy path expected ocutome', () => {
+    it('(unit): happy path expected outcome', () => {
       const state = {
         pos: [0,0],
         response: [],

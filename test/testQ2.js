@@ -37,7 +37,7 @@ describe('Testing For question Q2', () =>  {
       assert.equal(outcome, 4, 'broken algorithm')
     });
 
-    it('(unit): hard path, coins order should not break the algorithim', () => {
+    it('(unit): hard path, coins order should not break the algorithm', () => {
       const outcome = minimunNumberCoins([15,5,10,9,6,1], 37)
       assert.equal(outcome, 4, 'broken algorithm')
     });
@@ -62,11 +62,11 @@ describe('Testing For question Q2', () =>  {
       assert.equal(outcome, 0, 'broken algorithm')
     });
 
-    it('(integration): edge case: wrong parametes: negatice coins', () => {
+    it('(integration): edge case: wrong parameters: negative coins', () => {
       assert.throws(() => minimunNumberCoins([-1], 1), TypeError);
     });
 
-    it('(integration): edge case: wrong parametes: negative n', () => {
+    it('(integration): edge case: wrong parameters: negative n', () => {
       assert.throws(() => minimunNumberCoins([1], -1), TypeError);
     });
   

@@ -3,7 +3,7 @@ The answers to question 1,2,3 are in the files **q1.js, q2.js, q3.js** with the 
 The test for each question are inside ./test/ in the files **testQ1.js, testQ2.js, testQ3.js**
 
 
-## Runnign Test
+## Running Test
 In order to run the test do the following
 1. clone this repo
 2. in ./ run the following

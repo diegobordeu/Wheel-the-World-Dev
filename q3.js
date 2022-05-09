@@ -11,7 +11,7 @@ Sample Output:
 ResolveTop = [[0, 1], [1, 0]];
 ResolveBottom = [[1, 0], [0, 1]];
 
-algorithm pseudocode:
+algorithm pseudoscope:
 visit 0,0
 direction = -1 // going down
 delta = (-1, 1) -1 in row, 1 on col

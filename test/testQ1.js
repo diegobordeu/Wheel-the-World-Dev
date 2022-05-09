@@ -9,7 +9,7 @@ const {
 describe('Testing For question Q1', () =>  {
   
   /**
-   * sortAsc, sortDesc is not needed to test as it is a javascript native sorting approche
+   * sortAsc, sortDesc is not needed to test as it is a javascript native sorting approach
    * I just did it to set up the testing env
    */
   describe('sortAsc()', () => {
@@ -60,7 +60,7 @@ describe('Testing For question Q1', () =>  {
       assert.equal(outcome, 169, 'broken algorithm')
     });
 
-    it('(unit): edge case: empity string', () => {
+    it('(unit): edge case: empty string', () => {
       const outcome = getTotalSpeed([], [], true);
       assert.equal(outcome, 0, 'broken validation')
     });
