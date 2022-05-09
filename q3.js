@@ -21,8 +21,8 @@ with n != m
 [6, 8, 13, 16, 20 22],
 [7, 14, 15, 21, 22, 23],
 
-ResolveTop = [(0, 1), (-1, 0)]
-ResolveBottom = [(-1, 0), (0, 1)]
+ResolveTop = [[0, 1], [1, 0]];
+ResolveBottom = [[1, 0], [0, 1]];
 
 algorithm pseudocode:
 visit 0,0
@@ -42,51 +42,51 @@ while not finished:
     direction *= -1
  */
 
-const moveTo = (pos, delta, matrix, response, finished) => {
-  pos = [pos[0] + delta[0], pos[1] + delta[1]];
-  response.push(matrix[pos[0]][pos[1]]);
-  finished = false;
+const moveTo = (matrix, state, delta) => {
+  state.pos = [state.pos[0] + delta[0], state.pos[1] + delta[1]];
+  state.response.push(matrix[state.pos[0]][state.pos[1]]);
+  state.finished = false;
 }
 
-const canMove = (pos, delta, matrix, visited) => {
-  const newRow = pos[0] + delta[0];
-  const newCol = pos[1] + delta[1];
+const canMove = (matrix, state, delta) => {
+  const newRow = state.pos[0] + delta[0];
+  const newCol = state.pos[1] + delta[1];
   if (newRow < 0 || newRow === matrix.length || newCol < 0 || newCol === matrix[0].length) {
     return false;
   }
-  if (visited[newRow][newCol]) return false;
   return true;
 }
 
 const doTheZigZagThing = (matrix) => {
-  const initRow = new Array(matrix[0].length).fill(false);
-  const visited = new Array(matrix.length).fill(initRow);
-  console.log(visited);
-  const resolveTop = [(0, 1), (-1, 0)];
-  const resolveBottom = [(-1, 0), (0, 1)];
+  const resolveTop = [[0, 1], [1, 0]];
+  const resolveBottom = [[1, 0], [0, 1]];
   let direction = -1;
-  const pos = [0, 0];
-  let delta = [1, 1];
-  const response = [];
-  response.push(matrix[pos[0]][pos[1]]);
-  
-  let finished = false;
-  while (!finished) {
-    finished = true;
-    const resolver = direction === -1 ? resolveTop : resolveBottom;
-    delta = [delta[0] * direction, delta[1] * direction]
-    while (canMove(pos, delta, matrix, visited)) {
-      move(pos, delta, matrix, response, finished);
+  const delta = [-1, 1]
+  const state = { 
+    finished: false,
+    response: [matrix[0][0]],
+    pos: [0, 0],
+  };
+  let count = 0
+  while (!state.finished) {
+    state.finished = true;
+    const resolver = delta[0] === 1 ? resolveTop : resolveBottom;
+    delta[0] = delta[0] * direction;
+    delta[1] = delta[1] * direction;
+    console.log({state, delta, resolver})
+    while (canMove(matrix, state, delta)) {
+      moveTo(matrix, state, delta);
     }
     for (const movement of resolver) {
-      if (canMove(pos, movement, matrix, visited)) {
-        move(pos, movement, matrix, response, finished);
+      console.log(movement)
+      if (canMove(matrix, state, movement)) {
+        moveTo(matrix, state, movement);
         break;
       }
     }
-    direction *= -1
+    count++;
   }
-  return response;
+  return state.response;
 }
 
 const matrix = [
@@ -97,4 +97,4 @@ const matrix = [
 ]
 
 const res = doTheZigZagThing(matrix);
-console.log(matrix);
+console.log(res);
