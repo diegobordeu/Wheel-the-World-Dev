@@ -44,6 +44,8 @@ const canMove = (matrix, state, delta) => {
 }
 
 const doTheZigZagThing = (matrix) => {
+  if (!Array.isArray(matrix) || matrix.length === 0) throw new TypeError('matrix has to be 2D and non empty');
+  if (!Array.isArray(matrix[0]) || matrix[0].length === 0) throw new TypeError('matrix has to be 2D and non empty')
   const resolveTop = [[0, 1], [1, 0]];
   const resolveBottom = [[1, 0], [0, 1]];
   let direction = -1;
@@ -65,28 +67,9 @@ const doTheZigZagThing = (matrix) => {
   return state.response;
 }
 
-const matrix = [
-  [1, 3, 4, 10],
-  [2, 5, 9, 11],
-  [6, 8, 12, 15],
-  [7, 13, 14, 16],
-]
 
-const matrix2 = [
-  [1, 3, 4, 10],
-  [2, 5, 9, 11],
-  [6, 8, 12, 18],
-  [7, 13, 17, 19],
-  [14, 16, 20, 23],
-  [15, 21, 22, 24],
-]
-
-const matrix3 = [
-  [1, 3, 4, 10, 11, 18],
-  [2, 5, 9, 12, 17, 19],
-  [6, 8, 13, 16, 20, 23],
-  [7, 14, 15, 21, 22, 24],
-]
-
-const res = doTheZigZagThing(matrix3);
-console.log(res);
+module.exports = {
+  moveTo,
+  canMove,
+  doTheZigZagThing,
+}
